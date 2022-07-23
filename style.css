@@ -1,0 +1,93 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.inner{
+    background-color: aquamarine;
+    
+}
+.container{
+    margin-bottom: 20px;
+}
+.inner,.box{ 
+    width: 250px;
+    height: 200px;
+    margin: 10px;
+    border: 2px solid red;
+    margin: 5px;
+}
+.box{
+    background-color: antiquewhite;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    /* --------- 
+    # note linear is not important 
+    --------*/
+    transition: width 8s linear 1s, height 10s ease 5s;
+    transform:translateY(50px) scale(0.5) rotate(45deg) ;
+   
+}
+.box:hover{
+    width: 400px;
+    height: 300px;
+}
+/* ------
+transform & translate vs 
+ transition
+   ------*/
+.field{
+  border: 1px solid;
+  overflow: hidden;
+   }
+.field:hover .bat{
+    transform: rotate(-40deg);
+    transform-origin: top-right;
+}
+.bat:hover{
+    transition: transform 0.2s ease-in;
+}
+.ball{
+    border-radius: 25px;
+    background-color: red;
+    height: 20px;
+    width: 20px;
+    left: 120px;
+    position: relative;
+    transition: transform 1s ease-out;
+}
+.field:hover .ball{
+    transform: translate(500px,-100px);
+}
+
+/* class -7 animation */
+@keyframes sliding {
+    from{
+        background-color: red;
+        left: 0;
+        top: 0;
+    }
+    50%{
+        top: 200px;
+    }
+    to{
+    background-color: rgb(71, 114, 255);
+    left: 200px;
+    top: 0;
+}
+    
+}
+.area{
+    width: 300px;
+    height: 300px;
+    background-color: aqua;
+}
+.roll{
+    width: 80px;
+    height: 70px;
+    position: relative;
+    border-radius: 30px;
+    background-color: greenyellow;
+    animation: sliding  1s ease-in-out 0.5s infinite alternate ;
+    animation-play-state: running;
+}
